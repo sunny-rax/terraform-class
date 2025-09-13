@@ -1,26 +1,3 @@
-resource "aws_security_group" "terraform-sg-ec2" {
-  name        = "terraform-sg-ec2"
-  description = "for terraform EC2"
-  vpc_id      = aws_vpc.terraform-vpc.id
-  tags = {
-    "Name" = "terraform-sg-ec2"
-  }
-
-  ingress {
-    from_port   = 0             # 들어오는 트래픽의 시작 포트 번호
-    to_port     = 65535         # 들어오는 트래픽의 끝 포트 번호
-    protocol    = "tcp"         # 트래픽의 프로토콜
-    cidr_blocks = ["0.0.0.0/0"] # 허용할 IP 주소 범위
-    description = "for all Allow"
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1" # 모든 프로토콜에 대해 나가는 트래픽을 허용
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
 # Bastion SG
 resource "aws_security_group" "terraform-sg-bastion" {
   name        = "terraform-sg-bastion"
@@ -172,3 +149,4 @@ resource "aws_security_group" "terraform-sg-rds" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+

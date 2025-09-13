@@ -49,9 +49,12 @@ resource "aws_eks_node_group" "terraform-eks-node-group" {
     min_size     = 2
   }
 
-  ami_type       = "AL2023_x86_64_STANDARD" # 변경
+  ami_type        = "AL2023_x86_64_STANDARD" # 변경
   instance_types = ["t3.large"]
   disk_size      = 20
+
+
+
 
   depends_on = [
     aws_iam_role_policy_attachment.AmazonEKSWorkerNodePolicy,

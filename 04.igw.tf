@@ -3,4 +3,5 @@ resource "aws_internet_gateway" "terraform-igw" {
   tags = {
     "Name" = "terraform-igw"
   }
+
 }
