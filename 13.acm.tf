@@ -4,7 +4,7 @@ resource "aws_acm_certificate" "cert" {
     validation_method = "DNS"
 
     tags = {
-        Name = "gagahoga.shop"
+        Name = "shlee"
     }
 
     lifecycle {
@@ -30,3 +30,4 @@ resource "aws_route53_record" "route53_ssl" {
   zone_id         = aws_route53_zone.route53.zone_id
 
 }
+
