@@ -3,7 +3,7 @@ resource "aws_instance" "terraform-pub-ec2-bastion-2a" {
   instance_type               = "t2.micro"
   vpc_security_group_ids      = [aws_security_group.terraform-sg-bastion.id]
   subnet_id                   = aws_subnet.terraform-pub-subnet-2a.id
-  key_name                    = "powermct"
+  key_name                    = "shlee"
   associate_public_ip_address = true
 
   root_block_device {
@@ -19,3 +19,4 @@ resource "aws_instance" "terraform-pub-ec2-bastion-2a" {
   }
 
 }
+
