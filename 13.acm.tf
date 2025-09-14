@@ -1,10 +1,10 @@
 # 인증서 생성
 resource "aws_acm_certificate" "cert" {
-    domain_name       = "*.powermct.shop"
+    domain_name       = "*.gagahoga.shop"
     validation_method = "DNS"
 
     tags = {
-        Name = "powermct.shop"
+        Name = "gagahoga.shop"
     }
 
     lifecycle {
@@ -28,4 +28,5 @@ resource "aws_route53_record" "route53_ssl" {
   ttl             = 60
   type            = each.value.type
   zone_id         = aws_route53_zone.route53.zone_id
+
 }
